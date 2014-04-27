@@ -3,6 +3,8 @@
  BSD License.
  */
 
+// TODO: Add debug and log supports
+
 var net = require('net');
 var ws = require('ws');
 var httpSignature = require('http-signature');
