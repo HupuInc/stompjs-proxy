@@ -1,5 +1,5 @@
-Stomp over websocket proxy, for Stomp.js
-========================================
+Stomp websocket proxy, for Stomp.js
+===================================
 
 Usage:
 

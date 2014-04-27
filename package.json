@@ -1,7 +1,7 @@
 {
   "name": "stompjs-proxy",
   "version": "0.0.1",
-  "description": "Stomp over websocket proxy, for Stomp.js",
+  "description": "Stomp websocket proxy, for Stomp.js",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec",
