@@ -9,7 +9,7 @@ var net = require('net');
 var ws = require('ws');
 var httpSignature = require('http-signature');
 
-module.exports = function StompProxy(opts) {
+module.exports = function stompProxy(opts) {
   if (!opts || !opts.listen || !opts.upstream) {
     throw Error('Invalid options');
   }

@@ -1,6 +1,6 @@
-var StompProxy = require('../');
+var stompProxy = require('../');
 
-StompProxy({
+stompProxy({
   listen: {
     host: '127.0.0.1',
     port: 3000,

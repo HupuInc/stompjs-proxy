@@ -4,9 +4,9 @@ Stomp websocket proxy, for Stomp.js
 Usage:
 
 ```javascript
-var StompProxy = require('stompjs-proxy');
+var stompProxy = require('stompjs-proxy');
 
-StompProxy({
+stompProxy({
   listen: {
     host: '127.0.0.1',
     port: 3000,
