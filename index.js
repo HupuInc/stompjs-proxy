@@ -14,11 +14,11 @@ module.exports = function stompProxy(opts) {
     throw Error('Invalid options');
   }
 
-  var fe = opts.listen;
+  var down = opts.listen;
   var up = opts.upstream;
 
   if (opts.auth) {
-    fe.verifyClient = function (info) {
+    down.verifyClient = function (info) {
       try {
         var parsed = httpSignature.parse(info.req);
         var key = opts.auth[parsed.keyId];
@@ -29,10 +29,11 @@ module.exports = function stompProxy(opts) {
     };
   }
 
-  ws.createServer(fe, function (c) {
+  return ws.createServer(down, function (c) {
     var u = upstream(up);
     pipe(c, u);
   });
+
 };
 
 /* Internals
