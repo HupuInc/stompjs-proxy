@@ -6,9 +6,16 @@ var Stomp = require('stompjs');
     onclose: onend,
   });
 
+  var timer = setTimeout(function () {
+    client.disconnect();
+    onend();
+  }, 5*1000);
+
   client.debug = console.log.bind(console);
 
   client.connect({}, function onopen() {
+    clearTimeout(timer);
+
     (function snd() {
       if (client) {
         client.send('/topic/foo', {}, 'Hello, Stomp!');

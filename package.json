@@ -1,6 +1,6 @@
 {
   "name": "stompjs-proxy",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Stomp websocket proxy, for Stomp.js",
   "main": "index.js",
   "scripts": {
@@ -21,13 +21,14 @@
   "license": "BSD",
   "dependencies": {
     "ws": "~0.4.31",
-    "http-signature": "~0.10.0"
+    "http-signature": "~0.10.0",
+    "cluster-master": "~0.2.0"
   },
   "devDependencies": {
     "mocha": "~1.18.2",
     "jshint": "~2.4.4",
     "stompjs": "~2.3.1",
-    "stompjs-http-signature": "0.0.5"
+    "stompjs-http-signature": "0.0.6"
   },
   "readmeFilename": "README.md"
 }

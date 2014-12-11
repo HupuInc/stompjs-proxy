@@ -14,6 +14,18 @@ module.exports = function stompProxy(opts) {
     throw Error('Invalid options');
   }
 
+  if (opts.cluster && require('cluster').isMaster) {
+    var clusterMaster = require('cluster-master');
+    var config = opts.cluster;
+
+    if (typeof config === 'boolean') {
+      return clusterMaster(process.argv[1]);
+    } else {
+      if (!config.exec) config.exec = process.argv[1];
+      return clusterMaster(config);
+    }
+  }
+
   var down = opts.listen;
   var up = opts.upstream;
 
@@ -197,4 +209,5 @@ function pipe(c, u) {
 
   function upend() { u.end(); }
   function cend() { c.close(); }
+
 }
